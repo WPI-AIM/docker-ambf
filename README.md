@@ -31,6 +31,30 @@ If you stop the container (purposefully or restart your machine), it can be re-r
 docker start ambf-ros-noetic
 ```
 
+To run on windows: 
+1. Clone the repo 
+2. Download VNC viewer: https://www.realvnc.com/en/connect/download/viewer/ 
+2. Open a terminal and navigate to the repo folder (the folder with Dockerfile in it)
+3. Enter the following in the terminal (you select 'name' and 'image name'): 
+``` 
+docker build -t 'name'
+```
+The first time you run it: 
+```
+docker run -'name' 'image_name' -p 6080:80 -p 5900:5900 -v /dev/shm:/dev/shm 'image_name'
+```
+4. Open VNC viewer, press File -> Start new connection and type localhost:5900 as the name
+5. Press connect and you should see this: 
+
+6. To stop the container when you're finished, open another terminal and type: 
+``` 
+docker stop 'name'
+```
+7. If you want to restart the connection 
+```
+docker start 'name'
+```
+Note: you can also make your own private docker repo to save local changes to this container: https://docs.docker.com/docker-hub/
 
 
 
