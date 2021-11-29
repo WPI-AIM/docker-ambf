@@ -44,8 +44,8 @@ The first time you run it:
 docker run -'name' 'image_name' -p 6080:80 -p 5900:5900 -v /dev/shm:/dev/shm 'image_name'
 ```
 4. Open VNC viewer, press File -> Start new connection and type localhost:5900 as the name
-5. Press connect and you should see this: 
-
+5. Press connect and you should see this: <br/>
+![image](https://user-images.githubusercontent.com/36430552/143940629-2fd7ab4e-d7b8-49f0-8219-ac5c94dd4265.png)
 6. To stop the container when you're finished, open another terminal and type: 
 ``` 
 docker stop 'name'
