@@ -23,7 +23,9 @@ After succesfully building the Docker image, a Docker container can be instantia
 docker run --name ambf-ros-noetic -p 6080:80 -p 5900:5900 -v /dev/shm:/dev/shm collaborativerobotics/ambf-ros:noetic
 ```
 
-Once running, you can connect VNC to the docker container using "localhost:5900" as the address (or whatever port you set above). The VNC viewer should take you inside a Linux desktop environment. AMBF can now be run as usual by following these [instructions](https://github.com/WPI-AIM/ambf/wiki/Launching-the-Simulator).
+Once running, you can connect VNC to the docker container using "localhost:5900" as the address (or whatever port you set above). The VNC viewer should take you inside a Linux desktop environment (see picture below). AMBF can now be run as usual by following these [instructions](https://github.com/WPI-AIM/ambf/wiki/Launching-the-Simulator).
+
+![image](https://user-images.githubusercontent.com/36430552/145600599-49c6bbc2-ee87-4c66-b0e1-5f938f46335a.png)
 
 If you stop the container (purposefully or restart your machine), it can be re-run by using the "name" that we used for it earlier as follows.
 
@@ -31,30 +33,12 @@ If you stop the container (purposefully or restart your machine), it can be re-r
 docker start ambf-ros-noetic
 ```
 
-To run on windows: 
-1. Clone the repo 
-2. Download VNC viewer: https://www.realvnc.com/en/connect/download/viewer/ 
-2. Open a terminal and navigate to the repo folder (the folder with Dockerfile in it)
-3. Enter the following in the terminal (you select 'name' and 'image name'): 
+To stop the container when you're finished, open another terminal and type: 
 ``` 
-docker build -t 'name'
+docker stop ambf-ros-noetic
 ```
-The first time you run it: 
-```
-docker run -'name' 'image_name' -p 6080:80 -p 5900:5900 -v /dev/shm:/dev/shm 'image_name'
-```
-4. Open VNC viewer, press File -> Start new connection and type localhost:5900 as the name
-5. Press connect and you should see this: <br/>
-![image](https://user-images.githubusercontent.com/36430552/143940629-2fd7ab4e-d7b8-49f0-8219-ac5c94dd4265.png)
-6. To stop the container when you're finished, open another terminal and type: 
-``` 
-docker stop 'name'
-```
-7. If you want to restart the connection 
-```
-docker start 'name'
-```
-Note: you can also make your own private docker repo to save local changes to this container: https://docs.docker.com/docker-hub/
+
+Note: to keep changes you make in VNC desktop environment, you can also make your own private docker repo to save local changes to this container: https://docs.docker.com/docker-hub/ (see docker commit, docker push)
 
 
 
