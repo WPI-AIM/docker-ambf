@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y ros-noetic-tf
 RUN echo 'source /opt/ros/noetic/setup.bash' >> ~/.bashrc
 
 # Install Git, Python pip, tf
-RUN apt-get update && apt-get install -y git python3-pykdl pip libasound2-dev
+RUN apt-get update && apt-get install -y git python3-pykdl pip libasound2-dev && rm -rf /var/lib/apt/lists/*
 
 # clone AMBF
 RUN cd  && git clone https://github.com/WPI-AIM/ambf
